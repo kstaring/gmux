@@ -50,12 +50,16 @@ void gmux_set_gpu(int value)
     outb(GMUX_PORT_SWITCH_DDC, 1);
     outb(GMUX_PORT_SWITCH_DISPLAY, 2);
     outb(GMUX_PORT_SWITCH_SELECT, 2);
+
+    outb(GMUX_PORT_DISCRETE_POWER, 1);
     outb(GMUX_PORT_DISCRETE_POWER, 0);
   } else {
     outb(GMUX_PORT_SWITCH_DDC, 2);
-    outb(GMUX_PORT_SWITCH_DISPLAY, 3);
     outb(GMUX_PORT_SWITCH_SELECT, 3);
+    outb(GMUX_PORT_SWITCH_DISPLAY, 3);
+
     outb(GMUX_PORT_DISCRETE_POWER, 1);
+    outb(GMUX_PORT_DISCRETE_POWER, 3);
   }
 }
 
